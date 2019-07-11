@@ -3,7 +3,7 @@ import java.util.Iterator;
 import java.util.TreeMap;
 
 public class Etc_01 {
-	public static void main(String[] args) {
+	public static void run() {
 		//int[] v = {1,2,3,3,3,4,4};
         //int[] v = {3,2,4,4,2,5,2,5,5};
         //int[] v = {3,5,7,9,1};
