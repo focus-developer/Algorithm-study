@@ -23,9 +23,7 @@ public class Main {
 
         List<Integer> list = new ArrayList<Integer>();
 
-        int k = 0;
 
-        boolean check = false;
 
         for(int i=0; i<param.length; i++) {
             int target = param[i];
@@ -41,13 +39,12 @@ public class Main {
                 if(j == param.length-1) {
                     if(count > 1) {
                         list.add(count);
-                        check = true;
                     }
                 }
             }
         }
 
-        if(check) {
+        if(list.size() != 0) {
             answer = new int[list.size()];
             for(int i=0; i<list.size(); i++) {
                 answer[i] = list.get(i);
