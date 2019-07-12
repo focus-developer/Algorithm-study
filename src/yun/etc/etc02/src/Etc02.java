@@ -1,10 +1,13 @@
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+
 public class Etc02 {
     public static void main(String[] args) {
         // write your code here
+
 
         int [] arr1 = {1,2,2,3,2,2,2};
         int [] arr2 = {4,5,4,5,4,5,4};
@@ -112,6 +115,7 @@ public class Etc02 {
         }
 
         return answer;
+
     }
 
 }

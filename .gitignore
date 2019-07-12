@@ -43,6 +43,22 @@ out/*
 .idea/libraries
 .idea/caches
 
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+*.settings/
+.loadpath
+.recommenders
+*.recommenders
+*.project
+
 # Created by https://www.gitignore.io/api/windows
 # Edit at https://www.gitignore.io/?templates=windows
 
