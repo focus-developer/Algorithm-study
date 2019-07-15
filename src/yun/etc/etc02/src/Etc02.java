@@ -2,6 +2,7 @@
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeMap;
 
 
 public class Etc02 {
@@ -60,20 +61,23 @@ public class Etc02 {
         int max1 = 0;
         int max2 = 0;
 
-        Iterator<Integer> keys1 = map1.keySet().iterator();
-        Iterator<Integer> keys2 = map2.keySet().iterator();
+        TreeMap<Integer, Integer> treeMap1 = new TreeMap<Integer,Integer>(map1);
+        TreeMap<Integer, Integer> treeMap2 = new TreeMap<Integer,Integer>(map2);
+
+        Iterator<Integer> keys1 = treeMap1.keySet().iterator();
+        Iterator<Integer> keys2 = treeMap2.keySet().iterator();
         while(keys1.hasNext() && keys2.hasNext()) {
             key1 = keys1.next();
             key2 = keys2.next();
 
 
-            if(max1 <= map1.get(key1) && key1 > maxKey1) {
-                max1 = map1.get(key1);
+            if(max1 <= treeMap1.get(key1) && key1 > maxKey1) {
+                max1 = treeMap1.get(key1);
                 maxKey1 = key1;
             }
 
-            if(max2 <= map2.get(key2) && key2 > maxKey2) {
-                max2 = map2.get(key2);
+            if(max2 <= treeMap2.get(key2) && key2 > maxKey2) {
+                max2 = treeMap2.get(key2);
                 maxKey2 = key2;
             }
 
