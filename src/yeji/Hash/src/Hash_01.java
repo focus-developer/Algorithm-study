@@ -16,12 +16,12 @@ public class Hash_01 {
         			if(compare.get(participant[i])==null)
         				compare.put(participant[i], 1);
         			else {
+        				compare.compute(participant[i], (k, v) -> v+1);
+        				
         				if(sameName.get(participant[i])==null)
-        					sameName.put(participant[i], 2);
-        				else {
-        					int tmp = sameName.get(participant[i]);
-        					sameName.put(participant[i], tmp+1);
-        				}
+        					sameName.put(participant[i], 1);
+        				else 
+        					sameName.compute(participant[i], (k, v) -> v+1);
         			}
         			isCompletion = true;
         		}
@@ -40,14 +40,8 @@ public class Hash_01 {
     		Iterator<String> iterator = sameName.keySet().iterator();
     		while(iterator.hasNext()) {
     			String key = iterator.next();
-    			int count=0;
-    			for(int i=0;i<completion.length;i++) {
-    				if(completion[i].equals(key))
-    					count++;
-    			}
-    			System.out.println("count="+count);
     			
-    			if(sameName.get(key)!=count) {
+    			if(sameName.get(key)!=compare.get(key)) {
     				answer = key;
             		return answer;
     			}
@@ -58,10 +52,10 @@ public class Hash_01 {
     }
 	
 	public static void main(String[] args) {
-		String[] participant = {"leo","kiki","eden","kiki","leo"};
-		String[] completion = {"eden","kiki","leo","kiki"};
+		String[] participant = {"leo","kiki","eden","rian"};
+		String[] completion = {"eden","kiki","leo"};
 		
-		System.out.println("미완주자: "+solution(participant, completion));
+		System.out.println("answer: "+solution(participant, completion));
 	}
 	
 }
