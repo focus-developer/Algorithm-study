@@ -19,7 +19,7 @@ class Solution {
         boolean check = false;
 
         for(int i=0; i<heights.length; i++) {
-            for(int j=i; j>=0; j--) {
+            for(int j=i-1; j>=0; j--) {
                 if(heights[i] < heights[j]) {
                     answer[i] = j+1;
                     check = true;
