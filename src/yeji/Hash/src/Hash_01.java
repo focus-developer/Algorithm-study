@@ -51,7 +51,7 @@ public class Hash_01 {
         return answer;
     }
 	
-	public static void main(String[] args) {
+	public static void run() {
 		String[] participant = {"leo","kiki","eden","rian"};
 		String[] completion = {"eden","kiki","leo"};
 		
