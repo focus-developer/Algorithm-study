@@ -6,17 +6,17 @@ import java.util.Queue;
 public class Solution {
     public static void main(String[] args) {
 
-//        int bridge_length = 2;
-//        int weight = 10;
-//        int[] truck_weights = {7, 4, 5, 6}; // return 8
+        int bridge_length = 2;
+        int weight = 10;
+        int[] truck_weights = {7, 4, 5, 6}; // return 8
 
 //        int bridge_length = 100;
 //        int weight = 100;
 //        int[] truck_weights = {10}; // return 101
 
-        int bridge_length = 100;
-        int weight = 100;
-        int[] truck_weights = {10, 10, 10, 10, 10, 10, 10, 10,10, 10}; // return 110
+//        int bridge_length = 100;
+//        int weight = 100;
+//        int[] truck_weights = {10, 10, 10, 10, 10, 10, 10, 10,10, 10}; // return 110
 
         int answer = solution(bridge_length, weight, truck_weights);
         System.out.println("answer = " + answer);
@@ -35,7 +35,7 @@ public class Solution {
             truck_weights_sum += truck_weights[i];
                 if(queue.size() == bridge_length) {
                     truck_weights_sum -= queue.peek();
-                    ((LinkedList<Integer>) queue).pop();
+                    queue.poll();
                 }
                 if(truck_weights_sum <= weight) {
                     queue.add(truck_weights[i]);
