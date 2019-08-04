@@ -8,12 +8,9 @@ public class Stack_Queue_06 {
         
         for(int i=0; i<size-1; i++) {
         	for(int j=i+1; j<size; j++) {
-        		if(prices[i]>prices[j]) {
-        			answer[i]++;
+        		answer[i]++;
+        		if(prices[i]>prices[j])
         			break;
-        		}else {
-        			answer[i]++;
-        		}
         	}
         }
         
