@@ -31,7 +31,7 @@ public class Heap_02 {
 		int k = 30;
 		// 2
 		
-		// 4, [1, 2, 3, 4], [10, 40, 30, 20], 100  return ¡µ 4
+		// 4, [1, 2, 3, 4], [10, 40, 30, 20], 100  return ê°’ 4
 		
 		
 		System.out.println("answer = "+solution(stock,dates,supplies,k));
