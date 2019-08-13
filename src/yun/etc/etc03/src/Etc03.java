@@ -16,6 +16,7 @@ public class Etc03 {
 
     public static int solution(int[] index, String value) {
         int answer = 0;
+        boolean check = true;
 
         List<Word> list = new ArrayList<>();
         list.add(new Word(1,1,"PROGRAM"));
@@ -32,9 +33,11 @@ public class Etc03 {
         for(int i=0; i<list.size(); i++) {
             if(index[0] == list.get(i).x && index[1] == list.get(i).y) {
                 answer = list.get(i).getAnswer(value);
+                check = false;
                 break;
             }
         }
+        if(check) answer = -1;
 
         return answer;
     }
