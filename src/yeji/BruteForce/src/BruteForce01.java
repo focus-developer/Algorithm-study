@@ -1,3 +1,4 @@
+import java.security.PermissionCollection;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -24,7 +25,6 @@ public class BruteForce01 {
 		int[] pattern1 = {1, 2, 3, 4, 5};
 		int[] pattern2 = {2, 1, 2, 3, 2, 4, 2, 5};
 		int[] pattern3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-		int n = 0;
 		
 		Person[] persons = new Person[3];
 		persons[0] = new Person(1, pattern1);
@@ -36,26 +36,28 @@ public class BruteForce01 {
 			for (int i = 0; i < answers.length; i++) {
 				if (person.pattern[i % person.size] == answers[i]) {
 					person.count += 1;
-					System.out.println(p+":"+i+"번 정답");
 				}
 			}
-			if(persons[p].count != 0)
-				n++;
 		}
+
+		Arrays.sort(persons);
 		
-		if(n==0) {
-			// 3명 다 0점
+		if(persons[0].count==persons[1].count && persons[0].count==persons[2].count) {
+			// 3명 다 동점
 			answer = new int[3];
 			answer[0] = 1;
 			answer[1] = 2;
 			answer[2] = 3;
 		}
+		else if(persons[0].count==persons[1].count){
+			// 최고점 2명
+			answer = new int[2];
+			answer[0] = persons[0].number;
+			answer[1] = persons[1].number;
+		}
 		else {
-			answer = new int[n];
-			Arrays.sort(persons);
-			for (int i = 0; i < n; i++) {
-				answer[i] = persons[i].number;
-			}
+			answer = new int[1];
+			answer[0] = persons[0].number;
 		}
 		
 		return answer;
